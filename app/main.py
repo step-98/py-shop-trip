@@ -1,9 +1,9 @@
 import json
-from app.customer import Customer, create_customer
-from app.shop import Shop, create_shops
+from app.customer import create_customer
+from app.shop import create_shops
 
 
-def shop_trip():
+def shop_trip() -> None:
     with open("config.json") as config_file:
         main_dict = json.load(config_file)
         customers_list = create_customer(main_dict["customers"])
@@ -17,3 +17,7 @@ def shop_trip():
                 best_shop.purchase(customer)
                 customer.money -= fuel_cost
                 customer.ride_home(customer.home)
+
+
+if __name__ == "__main__":
+    shop_trip()
