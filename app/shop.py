@@ -23,13 +23,13 @@ class Shop:
         customer.money -= products_cost
         current_date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         print(f"Date: {current_date}\n"
-              f"Thank's {customer.name}, for your purchase!\n"
-              f"You have bought:\n")
+              f"Thanks, {customer.name}, for your purchase!\n"
+              f"You have bought:")
         for product, amount in customer.products_to_buy.items():
             cost = amount * self.products[product]
-            print(f"{amount} {product}s for {round(cost, 2)} dollars")
+            print(f"{amount} {product}s for {cost:g} dollars")
         print(f"Total cost is {round(products_cost, 2)} dollars\n"
-              f"See you again\n")
+              f"See you again!\n")
 
 
 def create_shops(shops: list) -> list:

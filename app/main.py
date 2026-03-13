@@ -1,10 +1,12 @@
 import json
 from app.customer import create_customer
 from app.shop import create_shops
+from pathlib import Path
 
 
 def shop_trip() -> None:
-    with open("config.json") as config_file:
+    config_path = Path(__file__).parent / "config.json"
+    with open(config_path) as config_file:
         main_dict = json.load(config_file)
         customers_list = create_customer(main_dict["customers"])
         shops_list = create_shops(main_dict["shops"])

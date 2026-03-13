@@ -41,12 +41,12 @@ class Customer:
     def ride_to(self, shop: Shop) -> None:
         self.home = self.location
         self.location = shop.location
-        print(f"{self.name} rides to {shop.name}")
+        print(f"{self.name} rides to {shop.name}\n")
 
     def ride_home(self, home: list) -> None:
         self.location = home
         print(f"{self.name} rides home\n"
-              f"{self.name} has {round(self.money, 2)} dollars\n")
+              f"{self.name} now has {round(self.money, 2)} dollars\n")
 
 
 def create_customer(customers_data: list) -> list[Customer]:
